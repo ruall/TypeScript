@@ -17,6 +17,47 @@ an = true;
 an = 'a三';
 console.log(an);
 //函数 方法
-function getName(name) {
-    return '我叫';
+function getAges(ages) {
+    return '今年' + ages + '岁';
 }
+var abc = 20;
+var result = getAges(abc);
+console.log(result);
+//有可选参数的函数
+function searchXX(a, b) {
+    var xx = '';
+    xx = 'a:' + a;
+    if (b != undefined) {
+        xx += 'b:' + b;
+    }
+    return xx;
+}
+var a1 = 1;
+var b1 = '三季度';
+console.log(searchXX(a1, b1));
+//不确定参数的函数
+function xy() {
+    var xxy = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        xxy[_i] = arguments[_i];
+    }
+    var yyx = '不确定参数函数：';
+    // for (let yyz of xxy){  //输出结果 三等奖，是那就看到你
+    //     yyx+=yyz;
+    // }
+    for (var yyz in xxy) { //输出结果 0，1
+        yyx += yyz + ',';
+    }
+    return yyx;
+}
+console.log(xy('三等奖', '是那就看到你'));
+//函数表达式
+var add = function (n1, n2) {
+    return n1 + n2;
+};
+console.log(add(1, 2));
+//ES6箭头函数
+var add1 = function (n3, n4) {
+    return n3 + n4;
+};
+console.log(add1(1, 2));

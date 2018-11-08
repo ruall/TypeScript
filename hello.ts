@@ -16,6 +16,51 @@ console.log(an);
 
 
 //函数 方法
-function  getName(name:number):string {
-    return '我叫'
+function  getAges(ages:number):string {
+    return '今年'+ages+'岁'
 }
+let abc:number = 20;
+let result:string = getAges(abc);
+console.log(result);
+
+
+//有可选参数的函数
+function searchXX(a:number,b?:string):string {
+    let xx:string = '';
+    xx = 'a:'+a;
+    if(b!=undefined){
+        xx += 'b:'+b;
+    }
+    return xx;
+}
+let a1:number = 1;
+let b1:string = '三季度';
+console.log(searchXX(a1,b1));
+
+
+//不确定参数的函数
+function xy(...xxy:string[]):string {
+    let yyx:string = '不确定参数函数：';
+    // for (let yyz of xxy){  //输出结果 三等奖，是那就看到你
+    //     yyx+=yyz;
+    // }
+    for(let yyz in xxy){  //输出结果 0，1
+        yyx+=yyz+',';
+    }
+    return yyx;
+}
+console.log(xy('三等奖','是那就看到你'));
+
+
+
+//函数表达式
+let add = function (n1:number,n2:number):number {
+    return n1+n2;
+};
+console.log(add(1,2));
+
+//ES6箭头函数
+let add1 = (n3:number,n4:number):number =>{
+    return n3+n4;
+};
+console.log(add1(1,2));
