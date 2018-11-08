@@ -64,3 +64,27 @@ let add1 = (n3:number,n4:number):number =>{
     return n3+n4;
 };
 console.log(add1(1,2));
+
+
+//全局变量  局部变量
+let ab1:string = '安东尼';
+function aabc():void {
+    console.log(ab1); //输出 undefined  变量提升
+    let ab1:string = '安东尼奥'; //函数内局部变量
+    console.log(ab1); //输出 安东尼奥
+}
+aabc();
+console.log(ab1); //全局变量 安东尼
+
+
+
+function bbac():void {
+    let anb:string = '三顿阿就是你接';
+    {
+        let ana:string = '萨博多久啊还不大'; //编辑时会变成var 变成函数内的全局变量
+        console.log(ana); // 输出 萨博多久啊还不大
+    }
+    console.log(anb); //输出 三顿阿就是你接
+    console.log(ana); //输出 萨博多久啊还不大
+}
+bbac();
